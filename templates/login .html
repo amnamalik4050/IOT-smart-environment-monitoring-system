@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+
+    <!-- Correct Django CSS link -->
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+</head>
+
+<body>
+    <div class="container">
+        <div class="left-panel">
+            <h1>Welcome to smart environment monitoring system</h1>
+            <p>Don't have an account?</p>
+            <a href="/signup/"><button>Sign Up</button></a>
+        </div>
+
+        <div class="right-panel">
+            <h2>Login</h2>
+            <form id="loginForm" method="POST">
+                {% csrf_token %}
+                <label for="email">Email<span class="required">*</span></label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="password">Password<span class="required">*</span></label>
+                <input type="password" id="password" name="password" required>
+
+                <button type="submit" class="sign-in-btn">Sign In</button>
+                <a href="#" class="forgot">Forgot Password?</a>
+            </form>
+        </div>
+    </div>
+
+    <!-- Correct Django JS link -->
+    <script src="{% static 'script.js' %}"></script>
+</body>
+</html>
